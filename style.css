@@ -1,0 +1,106 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+h1{
+  font-size: 30px;
+  padding-left: 15px;
+}
+
+body{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding:0;
+}
+
+.main_wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.accordion_wrapper{
+  width: 90%;
+  background:#E0EBF5;
+}
+
+.accordion_wrapper:hover{
+  cursor: pointer;
+}
+
+
+.accordion_wrapper:hover .accordion-item_trigger{
+    color:black;
+}
+
+
+.accordion-item{
+  position: relative;
+  margin-bottom:20px;
+
+}
+
+.accordion-item_input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.accordion-item_content{
+  margin-bottom:10px;
+  padding:20px;
+  border-top:none;
+  display: none;
+  transition: all 1s ease-out;
+  justify-content: center;
+}
+
+.accordion-item_trigger:hover{
+  cursor: pointer;
+}
+
+.accordion-item_trigger{
+  color:blue;
+  font-weight: bold;
+  display: block;
+  padding:20px;
+  border-top: 1px solid black;
+  font-size: 25px;
+}
+
+.accordion-item_input:checked ~ .accordion-item_trigger{
+
+}
+
+.accordion-item_input:checked ~ .accordion-item_content{
+display: flex;
+transition: all 1s ease-out;
+}
+
+.accordion-item_input:checked ~ .accordion-item_trigger{
+    color:blue;
+  }
+
+.accordion-item_input:hover ~ .accordion-item_content{
+  display: flex;
+  transition: all 1s ease-out;
+  }
+
+
+
+
+.close{
+    width: 1em;
+    height: 1em;
+    background-color: red;
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+  margin-left: 10px;
+}
+
+@media(max-width:320px){
+  .img_meme{
+    width: 200px;
+    height: 200px;
+  }
+}
